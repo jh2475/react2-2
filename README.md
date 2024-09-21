@@ -63,3 +63,27 @@
         {
             "presets": ["next/babel"]
         }
+# 9월 11일 강의
+<ECMAScript 기능 중 파이프라인 연산자를 사용해 보자.>
+- 파이프라인은 공식적으로 채택되지 않은 연산자 입니다.
+        
+        console.log(Math.random() * 10);
+        // 파이프라인 연산자를 사용하면 위 코드를 아래와 같이 바꿀 수 있습니다.
+        Math.random()
+            |> x => x * 10
+            |> console.log;
+- 기능을 사용하려면 바벨 플러그인을 설치해야 합니다.
+
+        npm install --save-dev @babel/plugin-proposal-pipeline-operator @babel/core
+- 그리고 .babelrc 파일을 다음과 같이 수정합니다.
+
+        {
+            "presets": ["next/babel"],
+            "plugins": [
+                [
+                    "@babel/plugin-proposal-pipeline-operator",
+                    { "proposal": "fsharp" }
+                ]
+            ]
+        }
+- 이제 개발 서버를 재 시작하면 됩니다.
