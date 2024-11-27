@@ -1,4 +1,127 @@
 # 이주형 202030324
+# 11월 27일 강의
+
+<GitHub Pages 기본 저장소 생성>
+
+- GitHub Pages를 운영하려면 먼저 GitHub 저장소를 생성해야 합니다.
+
+- 생성 방법은 일반 저장소 생성과 동일하지만, 저장소 이름을 다음과 같이 해야 합니다.
+
+- .home이 아니라 .io로 해야 합니다.
+        
+        <MyID>.github.io
+
+<공용PC GitHub 인증 제거>
+
+- 복수 계정을 사용하는 방법도 있지만 절차가 복잡하기 때문에 배포 연습은 글로벌 인증자료가 없는 상태에서 진행됩니다.
+
+- 제어판 > 사용자 계정 > 자격 증명 관리 -> Windows 자격 증명 관리 에서
+
+- Git 혹은 GitHub관련 인증을 모두 삭제합니다.
+
+- user.name과 user.email을 global로 설정합니다.
+
+        Bash
+        
+        $ git config --global user.name 'name'
+        
+        $ git config --global user.email 'user@sample.com'
+
+<배포할 저장소와 프로젝트 생성>
+
+- 앞서 <MyID>.github.io로 만든 저장소를 기본 저장소라고 한 이유는 이 저장소가 있어야
+    나머지 저장소도 Page로 만들 수 있기 때문입니다.
+
+- Working directory에 프로젝트를 새로 만들고, /page.js의 내용을 삭제 후 수정합니다.
+
+- 간단한 라우팅 페이지를 몇 개 만들어 줍니다.
+
+- 같은 이름으로 GitHub 저장소도 만듭니다.
+
+- GitHub에서 Repositories 탭을 선택하고, 오른쪽 상단의 New버튼을 클릭합니다.
+
+- 등록이 되었는지 확인합니다. remote를 확인하는 방법은 다음과 같습니다.
+
+        Bash
+        
+        $ git remote -value
+        
+        origin https://github.com/jh2475/foo.git (fetch)
+
+        origin https://github.com/jh2475/foo.git (push)
+
+- 확인 결과가 정상적으로 등록되어 있지 않다면 삭제 후 다시 등록해 줄 수 있습니다.
+
+- 이 명령은 터미널을 관리자 모드로 열어 실행합니다.
+
+        Bash
+
+        $ git remote remove origin
+
+*** 사용자 등록이 되어 있지 않으면 commit도 되지 않습니다.
+
+        Bash
+
+        $ git config --global user.name 'name'
+
+        $ git config --global user.email 'foo@example.com'
+
+- Local로 돌아와서 프로젝트를 push합니다.
+
+- 처음 push 할 때는 -u(upstream)옵션을 줍니다. 이렇게 하면 다음 부터는 git push만으로 push할 수 있습니다.
+
+        Bash
+
+        $ git push -u origin Main
+
+- git을 설치하고 처음 push할 때는 인증을 하라는 창이 나옵니다.
+
+- 파란색 버튼을 클릭하면 웹 브라우저에서 계정을 선택하거나 "Use a different account"를 클릭하여 로그인을 합니다.
+
+- GitHub 저장소의 Settings > Pages의 Select branch에서 main(master)를 선택해 주세요.
+
+- Save 버튼을 클릭합니다.
+
+- 1~2분 후에 <id>.github.io/<Repo. name>으로 접속하면 readme를 확인할 수 있습니다.
+
+<호스팅 비교>
+
+- Github Page
+
+1. 웹사이트: Github Page
+
+2. 비용: 무료
+
+3. 대역폭 제한: 매월 100GB (소프트 제한)
+
+4. 저장 공간 제한: 게시된 사이트는 1GB 이하
+
+5. 배포 시간 제한: 10분 이상 걸리면 시간 초과
+
+6. 주요 특징: 간편한 Git 기반 배포
+
+7. 관련 문서: Github Pages 정보 - 사용 제한
+
+- Vercel
+
+1. 비용: 무료 (Hobby 플랜)
+
+2. 대역폭 제한: 100GB/월
+
+3. 빌드 실행 제한: 월 6,000분
+
+4. 주요 특징: 최신 프론트엔드 프레임워크 지원
+
+- Netlify
+
+1. 비용: 무료 (Starter 플랜)
+
+2. 대역폭 제한: 100GB/월
+
+3. 빌드 시간 제한: 월 300분
+
+4. 주요 특징: 사용자 친화적인 UI와 강력한 배포 옵션
+
 # 11월 20일 강의
 
 <4. Context API vs. Redux>
